@@ -1,3 +1,5 @@
+import { BORNE_COLORS } from '@aangee/cottet-plan-lib/constants'
+
 const LABELS = {
   mh_2ch_3p:    'MH 2CH/3P',
   mh_2ch_4p:    'MH 2CH/4P',
@@ -46,7 +48,7 @@ function BorneEauContent({ borne }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {borne.parcelles.map(p => (
               <span key={p} style={{
-                background: '#0c4a6e', color: '#38bdf8',
+                background: BORNE_COLORS.eau.fill, color: BORNE_COLORS.eau.stroke,
                 borderRadius: 6, padding: '2px 8px', fontSize: 14, fontWeight: 700
               }}>{p}</span>
             ))}
@@ -61,8 +63,8 @@ function BorneEauContent({ borne }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {borne.distribue_vers.map(b => (
               <span key={b} style={{
-                background: 'transparent', color: '#38bdf8',
-                border: '1px solid #38bdf8',
+                background: 'transparent', color: BORNE_COLORS.eau.stroke,
+                border: `1px solid ${BORNE_COLORS.eau.stroke}`,
                 borderRadius: 6, padding: '2px 8px', fontSize: 13, fontWeight: 700
               }}>{b}</span>
             ))}
@@ -88,7 +90,7 @@ function BorneElecContent({ borne }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {borne.parcelles.map(p => (
               <span key={p} style={{
-                background: '#451a03', color: '#fbbf24',
+                background: BORNE_COLORS.elec.fill, color: BORNE_COLORS.elec.stroke,
                 borderRadius: 6, padding: '2px 8px', fontSize: 14, fontWeight: 700
               }}>{p}</span>
             ))}
@@ -103,8 +105,8 @@ function BorneElecContent({ borne }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {borne.distribue_vers.map(b => (
               <span key={b} style={{
-                background: 'transparent', color: '#fbbf24',
-                border: '1px solid #fbbf24',
+                background: 'transparent', color: BORNE_COLORS.elec.stroke,
+                border: `1px solid ${BORNE_COLORS.elec.stroke}`,
                 borderRadius: 6, padding: '2px 8px', fontSize: 13, fontWeight: 700
               }}>{b}</span>
             ))}
