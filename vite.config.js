@@ -4,6 +4,20 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   base: '/camping-viewer/',
+  resolve: {
+    // ⚠ Une seule copie de React, quoi qu'il arrive.
+    //
+    // `@aangee/cottet-plan-lib` est lié en local (file:) pendant le chantier réseau :
+    // ses dépendances se résolvent donc depuis `packages/`, et npm y a installé les
+    // peers React de `react-zoom-pan-pinch`. Sans cette ligne, ce composant charge un
+    // React et l'application un autre — les hooks lèvent « Invalid hook call », et la
+    // page ne s'affiche plus du tout.
+    //
+    // À conserver même après le retour aux versions publiées : le jour où un package
+    // partagé réintroduit une dépendance à React, le symptôme reviendrait à l'identique
+    // et coûterait le même temps à diagnostiquer.
+    dedupe: ['react', 'react-dom'],
+  },
   plugins: [
     react(),
     VitePWA({
