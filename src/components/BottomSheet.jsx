@@ -1,4 +1,5 @@
-import { BORNE_COLORS } from '@aangee/cottet-plan-lib/constants'
+import { BORNE_TYPES } from '@aangee/cottet-schema'
+import { BORNE_COLORS, ROLE_STYLES } from '@aangee/cottet-plan-lib/constants'
 
 const LABELS = {
   mh_2ch_3p:    'MH 2CH/3P',
@@ -38,81 +39,65 @@ function HebergementContent({ h }) {
   )
 }
 
-function BorneEauContent({ borne }) {
-  return (
-    <>
-      <div className="sheet-title">{borne.num} — Borne eau 💧</div>
-      {borne.parcelles.length > 0 ? (
+// Un seul composant pour les deux réseaux : ils ne différaient que par la couleur
+// et le libellé, tous deux disponibles dans la table du package.
+function PointReseauContent({ borne, reseau }) {
+  const couleurs = BORNE_COLORS[reseau]
+  const role = borne.role ?? 'borne'
+  const style = ROLE_STYLES[role] ?? ROLE_STYLES.borne
+  const redistribue = role !== 'borne'
+
+  const Pastilles = ({ valeurs, plein }) => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+      {valeurs.map(v => (
+        <span key={v} style={{
+          background: plein ? couleurs.fill : 'transparent',
+          color: couleurs.stroke,
+          border: plein ? 'none' : `1px solid ${couleurs.stroke}`,
+          borderRadius: 6, padding: '2px 8px',
+          fontSize: plein ? 14 : 13, fontWeight: 700,
+        }}>{v}</span>
+      ))}
+    </div>
+  )
+
+  const alimente = borne.distribue_vers ?? []
+  const dessert = borne.parcelles ?? []
+
+  // Ce qu'un boîtier fait d'abord, c'est redistribuer : sa fiche commence donc par
+  // là, quand une borne commence par ce qu'elle dessert.
+  const blocAlimente = alimente.length > 0 && (
+    <div key="alimente">
+      <div className="sheet-label" style={{ marginTop: 12, marginBottom: 6 }}>
+        Alimente {alimente.length} point{alimente.length > 1 ? 's' : ''} :
+      </div>
+      <Pastilles valeurs={alimente} plein={false} />
+    </div>
+  )
+
+  const blocDessert = (
+    <div key="dessert">
+      {dessert.length > 0 ? (
         <>
-          <div className="sheet-label" style={{ marginBottom: 8 }}>Parcelles :</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {borne.parcelles.map(p => (
-              <span key={p} style={{
-                background: BORNE_COLORS.eau.fill, color: BORNE_COLORS.eau.stroke,
-                borderRadius: 6, padding: '2px 8px', fontSize: 14, fontWeight: 700
-              }}>{p}</span>
-            ))}
-          </div>
+          <div className="sheet-label" style={{ marginTop: 12, marginBottom: 8 }}>Dessert :</div>
+          <Pastilles valeurs={dessert} plein />
         </>
       ) : (
-        <div className="sheet-label">Infrastructure (pas de parcelle numérotée)</div>
-      )}
-      {borne.distribue_vers?.length > 0 && (
-        <>
-          <div className="sheet-label" style={{ marginTop: 12, marginBottom: 6 }}>Alimente les bornes :</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {borne.distribue_vers.map(b => (
-              <span key={b} style={{
-                background: 'transparent', color: BORNE_COLORS.eau.stroke,
-                border: `1px solid ${BORNE_COLORS.eau.stroke}`,
-                borderRadius: 6, padding: '2px 8px', fontSize: 13, fontWeight: 700
-              }}>{b}</span>
-            ))}
-          </div>
-        </>
-      )}
-      {borne.note && (
-        <div style={{ marginTop: 12, color: '#94a3b8', fontSize: 13, fontStyle: 'italic' }}>
-          ⚠ {borne.note}
+        <div className="sheet-label" style={{ marginTop: 12 }}>
+          {redistribue ? 'Ne dessert aucun emplacement directement' : 'Aucun emplacement enregistré'}
         </div>
       )}
-    </>
+    </div>
   )
-}
 
-function BorneElecContent({ borne }) {
   return (
     <>
-      <div className="sheet-title">{borne.num} — Borne élec ⚡</div>
-      {borne.parcelles.length > 0 ? (
-        <>
-          <div className="sheet-label" style={{ marginBottom: 8 }}>Parcelles :</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {borne.parcelles.map(p => (
-              <span key={p} style={{
-                background: BORNE_COLORS.elec.fill, color: BORNE_COLORS.elec.stroke,
-                borderRadius: 6, padding: '2px 8px', fontSize: 14, fontWeight: 700
-              }}>{p}</span>
-            ))}
-          </div>
-        </>
-      ) : (
-        <div className="sheet-label">Borne sans parcelles enregistrées</div>
-      )}
-      {borne.distribue_vers?.length > 0 && (
-        <>
-          <div className="sheet-label" style={{ marginTop: 12, marginBottom: 6 }}>Alimente les bornes :</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {borne.distribue_vers.map(b => (
-              <span key={b} style={{
-                background: 'transparent', color: BORNE_COLORS.elec.stroke,
-                border: `1px solid ${BORNE_COLORS.elec.stroke}`,
-                borderRadius: 6, padding: '2px 8px', fontSize: 13, fontWeight: 700
-              }}>{b}</span>
-            ))}
-          </div>
-        </>
-      )}
+      <div className="sheet-title">
+        {borne.num} — {style.label} {couleurs.label.toLowerCase()}
+      </div>
+      {redistribue
+        ? <>{blocAlimente}{blocDessert}</>
+        : <>{blocDessert}{blocAlimente}</>}
       {borne.note && (
         <div style={{ marginTop: 12, color: '#94a3b8', fontSize: 13, fontStyle: 'italic' }}>
           ⚠ {borne.note}
@@ -131,13 +116,11 @@ export function BottomSheet({ selected, data, onClose }) {
       const h = data.hebergements.find(x => x.id === selected.id)
       return h ? <HebergementContent h={h} /> : null
     }
-    if (selected.type === 'borne_eau') {
-      const b = data.bornes_eau.find(x => x.id === selected.id)
-      return b ? <BorneEauContent borne={b} /> : null
-    }
-    if (selected.type === 'borne_elec') {
-      const b = data.bornes_elec.find(x => x.id === selected.id)
-      return b ? <BorneElecContent borne={b} /> : null
+    // Un cas par réseau déclaré, au lieu d'une branche écrite à la main pour chacun.
+    for (const reseau of BORNE_TYPES) {
+      if (selected.type !== `borne_${reseau}`) continue
+      const b = (data[`bornes_${reseau}`] ?? []).find(x => x.id === selected.id)
+      return b ? <PointReseauContent borne={b} reseau={reseau} /> : null
     }
     return null
   })()

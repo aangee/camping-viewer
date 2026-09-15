@@ -1,8 +1,8 @@
 {
   "_meta": {
     "schema_version": 3,
-    "generated_at": "2026-09-15T11:37:07.641Z",
-    "content_hash": "9fe30f5542d9",
+    "generated_at": "2026-09-15T13:30:34.435Z",
+    "content_hash": "3106fcd52da3",
     "refresh_hint_days": 30
   },
   "hebergements": [
@@ -621,7 +621,19 @@
       "x": 239,
       "y": 330,
       "parcelles": [],
-      "note": "arriver generale enedis, et arrive au boitier de la guinguette et de la se redispatche dans le tous le camping"
+      "note": "arriver generale enedis, et arrive au boitier de la guinguette et de la se redispatche dans le tous le camping",
+      "distribue_vers": [
+        "ELEC-09"
+      ]
+    },
+    {
+      "id": "ELEC-12",
+      "num": "ELEC-12",
+      "role": "coffret",
+      "x": 1303,
+      "y": 838,
+      "parcelles": [],
+      "note": "coffret qui gere aussi la pompe de relavage"
     }
   ],
   "bornes_irrigation": []
