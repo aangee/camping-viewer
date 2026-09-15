@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "schema_version": 2,
-    "generated_at": "2026-07-02T08:13:49.764Z",
-    "content_hash": "d8774d32ba2c",
+    "schema_version": 3,
+    "generated_at": "2026-09-15T11:37:07.641Z",
+    "content_hash": "9fe30f5542d9",
     "refresh_hint_days": 30
   },
   "hebergements": [
@@ -10,7 +10,7 @@
       "id": "9",
       "nom": "9",
       "type": "caravane",
-      "borne_eau": "EAU-03",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 845,
       "cy": 694
@@ -19,8 +19,8 @@
       "id": "1",
       "nom": "1",
       "type": "mh_2ch_3p",
-      "borne_eau": "EAU-01",
-      "borne_elec": "ELEC-07",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 405,
       "cy": 362
     },
@@ -28,8 +28,8 @@
       "id": "2",
       "nom": "2",
       "type": "mh_2ch_3p",
-      "borne_eau": "EAU-01",
-      "borne_elec": "ELEC-07",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 356,
       "cy": 306
     },
@@ -37,8 +37,8 @@
       "id": "3",
       "nom": "3",
       "type": "mh_2ch_3p",
-      "borne_eau": "EAU-01",
-      "borne_elec": "ELEC-07",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 449,
       "cy": 272
     },
@@ -46,8 +46,8 @@
       "id": "4",
       "nom": "4",
       "type": "mh_2ch_3p",
-      "borne_eau": "EAU-01",
-      "borne_elec": "ELEC-07",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 519,
       "cy": 211
     },
@@ -55,7 +55,7 @@
       "id": "5",
       "nom": "5",
       "type": "resident",
-      "borne_eau": "EAU-09",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 788,
       "cy": 436
@@ -64,7 +64,7 @@
       "id": "6",
       "nom": "6",
       "type": "mh_3ch_6p",
-      "borne_eau": "EAU-03",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 918,
       "cy": 468
@@ -73,8 +73,8 @@
       "id": "7",
       "nom": "7",
       "type": "resident",
-      "borne_eau": "EAU-03",
-      "borne_elec": "ELEC-09",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1106,
       "cy": 558
     },
@@ -82,7 +82,7 @@
       "id": "8",
       "nom": "8",
       "type": "mh_2ch_4p",
-      "borne_eau": "EAU-03",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 952,
       "cy": 639
@@ -91,8 +91,8 @@
       "id": "11",
       "nom": "11",
       "type": "resident",
-      "borne_eau": "EAU-04",
-      "borne_elec": "ELEC-10",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 781,
       "cy": 881
     },
@@ -100,8 +100,8 @@
       "id": "12",
       "nom": "12",
       "type": "resident",
-      "borne_eau": "EAU-04",
-      "borne_elec": "ELEC-10",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 870,
       "cy": 953
     },
@@ -118,8 +118,8 @@
       "id": "14",
       "nom": "14",
       "type": "mh_2ch_4p",
-      "borne_eau": "EAU-02",
-      "borne_elec": "ELEC-09",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1046,
       "cy": 733
     },
@@ -136,8 +136,8 @@
       "id": "17",
       "nom": "17",
       "type": "resident",
-      "borne_eau": "EAU-04",
-      "borne_elec": "ELEC-10",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1096,
       "cy": 907
     },
@@ -163,8 +163,8 @@
       "id": "15",
       "nom": "15",
       "type": "resident",
-      "borne_eau": "EAU-02",
-      "borne_elec": "ELEC-09",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1212,
       "cy": 618
     },
@@ -181,7 +181,7 @@
       "id": "21",
       "nom": "21",
       "type": "emplacement_nu",
-      "borne_eau": "EAU-07",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 1461,
       "cy": 992
@@ -191,7 +191,7 @@
       "nom": "22",
       "type": "mh_2ch_4p",
       "borne_eau": null,
-      "borne_elec": "ELEC-11",
+      "borne_elec": null,
       "cx": 1559,
       "cy": 903
     },
@@ -218,7 +218,7 @@
       "nom": "25",
       "type": "tente_equipee",
       "borne_eau": null,
-      "borne_elec": "ELEC-08",
+      "borne_elec": null,
       "cx": 1567,
       "cy": 587
     },
@@ -236,7 +236,7 @@
       "nom": "27",
       "type": "tente_equipee",
       "borne_eau": null,
-      "borne_elec": "ELEC-08",
+      "borne_elec": null,
       "cx": 1579,
       "cy": 432
     },
@@ -272,7 +272,7 @@
       "nom": "31",
       "type": "dome_cocoon",
       "borne_eau": null,
-      "borne_elec": "ELEC-13",
+      "borne_elec": null,
       "cx": 1991,
       "cy": 336
     },
@@ -281,7 +281,7 @@
       "nom": "32",
       "type": "dome_cocoon",
       "borne_eau": null,
-      "borne_elec": "ELEC-14",
+      "borne_elec": null,
       "cx": 2125,
       "cy": 429
     },
@@ -299,7 +299,7 @@
       "nom": "34",
       "type": "resident",
       "borne_eau": null,
-      "borne_elec": "ELEC-14",
+      "borne_elec": null,
       "cx": 1995,
       "cy": 616
     },
@@ -317,7 +317,7 @@
       "nom": "36",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": "ELEC-12",
+      "borne_elec": null,
       "cx": 1847,
       "cy": 826
     },
@@ -335,7 +335,7 @@
       "nom": "38",
       "type": "caravane",
       "borne_eau": null,
-      "borne_elec": "ELEC-12",
+      "borne_elec": null,
       "cx": 1756,
       "cy": 946
     },
@@ -343,8 +343,8 @@
       "id": "39",
       "nom": "39",
       "type": "resident",
-      "borne_eau": "EAU-07",
-      "borne_elec": "ELEC-11",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1669,
       "cy": 1068
     },
@@ -352,8 +352,8 @@
       "id": "40",
       "nom": "40",
       "type": "mh_2ch_4p",
-      "borne_eau": "EAU-07",
-      "borne_elec": "ELEC-11",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 1576,
       "cy": 1140
     },
@@ -380,7 +380,7 @@
       "nom": "44",
       "type": "chalet_eco",
       "borne_eau": null,
-      "borne_elec": "ELEC-01",
+      "borne_elec": null,
       "cx": 868,
       "cy": 1366
     },
@@ -389,7 +389,7 @@
       "nom": "45",
       "type": "chalet_eco",
       "borne_eau": null,
-      "borne_elec": "ELEC-01",
+      "borne_elec": null,
       "cx": 742,
       "cy": 1395
     },
@@ -397,7 +397,7 @@
       "id": "46",
       "nom": "46",
       "type": "emplacement_nu",
-      "borne_eau": "EAU-08",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 577,
       "cy": 1287
@@ -406,7 +406,7 @@
       "id": "47",
       "nom": "47",
       "type": "emplacement_nu",
-      "borne_eau": "EAU-08",
+      "borne_eau": null,
       "borne_elec": null,
       "cx": 550,
       "cy": 1122
@@ -424,8 +424,8 @@
       "id": "49",
       "nom": "49",
       "type": "resident",
-      "borne_eau": "EAU-08",
-      "borne_elec": "ELEC-10",
+      "borne_eau": null,
+      "borne_elec": null,
       "cx": 644,
       "cy": 979
     }
@@ -434,110 +434,94 @@
     {
       "id": "EAU-01",
       "num": "EAU-01",
+      "role": "borne",
       "x": 524,
       "y": 284,
-      "parcelles": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ]
+      "parcelles": []
     },
     {
       "id": "EAU-02",
       "num": "EAU-02",
+      "role": "borne",
       "x": 1144,
       "y": 711,
-      "parcelles": [
-        "14",
-        "15"
-      ],
+      "parcelles": [],
       "note": "puit-pompe, puit bas, yoann"
     },
     {
       "id": "EAU-03",
       "num": "EAU-03",
+      "role": "borne",
       "x": 1049,
       "y": 642,
-      "parcelles": [
-        "6",
-        "7",
-        "8",
-        "9"
-      ]
+      "parcelles": []
     },
     {
       "id": "EAU-04",
       "num": "EAU-04",
+      "role": "borne",
       "x": 980,
       "y": 833,
-      "parcelles": [
-        "11",
-        "12",
-        "17"
-      ],
+      "parcelles": [],
       "note": "arriver du 13 (NON raccorder)"
     },
     {
       "id": "EAU-05",
       "num": "EAU-05",
+      "role": "borne",
       "x": 763,
       "y": 955,
-      "parcelles": []
+      "parcelles": [],
+      "note": "Desservait : snack, aire de jeux"
     },
     {
       "id": "EAU-06",
       "num": "EAU-06",
+      "role": "borne",
       "x": 1153,
       "y": 1204,
-      "parcelles": []
+      "parcelles": [],
+      "note": "Desservait : sanitaire, puit cuisine"
     },
     {
       "id": "EAU-07",
       "num": "EAU-07",
+      "role": "borne",
       "x": 1412,
       "y": 1073,
-      "parcelles": [
-        "21",
-        "39",
-        "40"
-      ]
+      "parcelles": [],
+      "note": "Desservait : puit du 16"
     },
     {
       "id": "EAU-08",
       "num": "EAU-08",
+      "role": "borne",
       "x": 341,
       "y": 1084,
-      "parcelles": [
-        "46",
-        "47",
-        "49"
-      ]
+      "parcelles": []
     },
     {
       "id": "EAU-09",
       "num": "EAU-09",
+      "role": "borne",
       "x": 710,
       "y": 427,
-      "parcelles": [
-        "5"
-      ]
+      "parcelles": []
     }
   ],
   "bornes_elec": [
     {
       "id": "ELEC-01",
       "num": "ELEC-01",
+      "role": "borne",
       "x": 795,
       "y": 1269,
-      "parcelles": [
-        "44",
-        "45"
-      ]
+      "parcelles": []
     },
     {
       "id": "ELEC-02",
       "num": "ELEC-02",
+      "role": "borne",
       "x": 1422,
       "y": 1087,
       "parcelles": []
@@ -545,6 +529,7 @@
     {
       "id": "ELEC-03",
       "num": "ELEC-03",
+      "role": "borne",
       "x": 1763,
       "y": 847,
       "parcelles": []
@@ -552,6 +537,7 @@
     {
       "id": "ELEC-04",
       "num": "ELEC-04",
+      "role": "borne",
       "x": 772,
       "y": 941,
       "parcelles": [],
@@ -560,6 +546,7 @@
     {
       "id": "ELEC-05",
       "num": "ELEC-05",
+      "role": "borne",
       "x": 1145,
       "y": 692,
       "parcelles": [],
@@ -568,6 +555,7 @@
     {
       "id": "ELEC-06",
       "num": "ELEC-06",
+      "role": "borne",
       "x": 2026,
       "y": 466,
       "parcelles": []
@@ -575,58 +563,66 @@
     {
       "id": "ELEC-07",
       "num": "ELEC-07",
+      "role": "borne",
       "x": 1953,
       "y": 519,
-      "parcelles": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ]
+      "parcelles": []
     },
     {
       "id": "ELEC-08",
       "num": "ELEC-08",
+      "role": "borne",
       "x": 1530,
       "y": 512,
-      "parcelles": [
-        "25",
-        "27"
-      ]
+      "parcelles": []
     },
     {
       "id": "ELEC-09",
       "num": "ELEC-09",
+      "role": "coffret",
       "x": 533,
       "y": 689,
-      "parcelles": [
-        "7",
-        "14",
-        "15"
+      "parcelles": [],
+      "note": "Desservait : piscine",
+      "distribue_vers": [
+        "ELEC-04",
+        "ELEC-05",
+        "ELEC-08",
+        "ELEC-11"
       ]
     },
     {
       "id": "ELEC-10",
       "num": "ELEC-10",
+      "role": "coffret",
       "x": 1402,
       "y": 1281,
-      "parcelles": [
-        "11",
-        "12",
-        "17",
-        "49"
+      "parcelles": [],
+      "note": "ici sest un boitier qui redispatche et qui gere aussi les panneaus solaire, laimentation des sanitaire et les borne 02, 03, 07, 06. mais je ne suis pas sur des nb des bornes au vue du souci que lon a u qui renomer nimporte comment. je dois aller verifier sur le terrain",
+      "distribue_vers": [
+        "ELEC-02",
+        "ELEC-03",
+        "ELEC-06",
+        "ELEC-07"
       ]
     },
     {
       "id": "ELEC-11",
       "num": "ELEC-11",
+      "role": "borne",
       "x": 490,
       "y": 249,
-      "parcelles": [
-        "22",
-        "39",
-        "40"
-      ]
+      "parcelles": []
+    },
+    {
+      "id": "ELEC-B-00",
+      "num": "ELEC-B-00",
+      "role": "arrivee",
+      "x": 239,
+      "y": 330,
+      "parcelles": [],
+      "note": "arriver generale enedis, et arrive au boitier de la guinguette et de la se redispatche dans le tous le camping"
     }
-  ]
+  ],
+  "bornes_irrigation": []
 }
