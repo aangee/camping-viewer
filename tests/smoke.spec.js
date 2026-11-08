@@ -1,58 +1,50 @@
 import { test, expect } from '@playwright/test'
+import {
+  collectPageErrors,
+  gotoPlan,
+  hebergementMarkers,
+  borneEauMarkers,
+} from './helpers.js'
 
-const URL = '/camping-viewer/'
+test('chargement — plan visible, aucune erreur console', async ({ page }) => {
+  const errors = collectPageErrors(page)
+  await gotoPlan(page)
+  expect(errors, `Erreurs JS : ${errors.join('\n')}`).toHaveLength(0)
+})
 
-test('chargement — SVG visible, aucune erreur console', async ({ page }) => {
-  const errors = []
-  page.on('console', msg => { if (msg.type() === 'error') errors.push(msg.text()) })
-  page.on('pageerror', err => errors.push(err.message))
+test('clic hébergement — bottom sheet visible, aucune erreur', async ({ page }) => {
+  const errors = collectPageErrors(page)
+  await gotoPlan(page)
 
-  await page.goto(URL)
-  await page.waitForSelector('svg', { timeout: 10000 })
-  await page.waitForTimeout(500) // laisser React finir le rendu
+  await hebergementMarkers(page).first().click()
+  await expect(page.locator('.bottom-sheet.open')).toBeVisible()
+  await expect(page.locator('.sheet-title')).toContainText('Parcelle')
 
   expect(errors, `Erreurs JS : ${errors.join('\n')}`).toHaveLength(0)
 })
 
-test('clic hébergement — centrage + bottom sheet visible, aucune erreur', async ({ page }) => {
-  const errors = []
-  page.on('console', msg => { if (msg.type() === 'error') errors.push(msg.text()) })
-  page.on('pageerror', err => errors.push(err.message))
+test('clic borne eau — bottom sheet visible, aucune erreur', async ({ page }) => {
+  const errors = collectPageErrors(page)
+  await gotoPlan(page)
 
-  await page.goto(URL)
-  await page.waitForSelector('svg', { timeout: 10000 })
-  await page.waitForTimeout(500)
-
-  // Clic sur le premier marqueur cliquable (hébergement)
-  const marker = page.locator('g[style*="cursor: pointer"]').first()
-  await marker.click()
-  await page.waitForTimeout(400) // attendre l'animation
-
-  // La bottom sheet doit être ouverte
+  await borneEauMarkers(page).first().click()
   await expect(page.locator('.bottom-sheet.open')).toBeVisible()
+  await expect(page.locator('.sheet-title')).toContainText('Borne eau')
 
   expect(errors, `Erreurs JS : ${errors.join('\n')}`).toHaveLength(0)
 })
 
 test('clic hébergement puis déplacement — pas de blocage', async ({ page }) => {
-  const errors = []
-  page.on('pageerror', err => errors.push(err.message))
+  const errors = collectPageErrors(page)
+  await gotoPlan(page)
 
-  await page.goto(URL)
-  await page.waitForSelector('svg', { timeout: 10000 })
-  await page.waitForTimeout(500)
-
-  // Ouvrir la sheet
-  await page.locator('g[style*="cursor: pointer"]').first().click()
-  await page.waitForTimeout(400)
+  await hebergementMarkers(page).first().click()
   await expect(page.locator('.bottom-sheet.open')).toBeVisible()
 
-  // Simuler un drag sur la MAP (la sheet ne doit pas bloquer)
   await page.mouse.move(300, 200)
   await page.mouse.down()
   await page.mouse.move(400, 300)
   await page.mouse.up()
 
-  // Pas d'erreur JS
   expect(errors, `Erreurs JS : ${errors.join('\n')}`).toHaveLength(0)
 })
