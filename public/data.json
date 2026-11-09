@@ -1,8 +1,8 @@
 {
   "_meta": {
     "schema_version": 3,
-    "generated_at": "2026-11-08T22:32:04.562Z",
-    "content_hash": "0895d19a355e",
+    "generated_at": "2026-11-09T00:04:29.566Z",
+    "content_hash": "c5ee7f18922d",
     "refresh_hint_days": 30
   },
   "hebergements": [
@@ -92,7 +92,7 @@
       "nom": "11",
       "type": "resident",
       "borne_eau": "EAU-04",
-      "borne_elec": null,
+      "borne_elec": "ELEC-07",
       "cx": 781,
       "cy": 881
     },
@@ -101,7 +101,7 @@
       "nom": "12",
       "type": "resident",
       "borne_eau": "EAU-04",
-      "borne_elec": null,
+      "borne_elec": "ELEC-07",
       "cx": 870,
       "cy": 953
     },
@@ -137,7 +137,7 @@
       "nom": "17",
       "type": "resident",
       "borne_eau": "EAU-04",
-      "borne_elec": null,
+      "borne_elec": "ELEC-07",
       "cx": 1096,
       "cy": 907
     },
@@ -146,7 +146,7 @@
       "nom": "18",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-10",
       "cx": 976,
       "cy": 1175
     },
@@ -200,7 +200,7 @@
       "nom": "23",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-12",
       "cx": 1535,
       "cy": 698
     },
@@ -209,7 +209,7 @@
       "nom": "24",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-04",
       "cx": 1405,
       "cy": 777
     },
@@ -227,7 +227,7 @@
       "nom": "26",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-04",
       "cx": 1449,
       "cy": 517
     },
@@ -245,7 +245,7 @@
       "nom": "28",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-13",
       "cx": 1796,
       "cy": 636
     },
@@ -254,7 +254,7 @@
       "nom": "29",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-13",
       "cx": 1882,
       "cy": 539
     },
@@ -263,7 +263,7 @@
       "nom": "30",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-13",
       "cx": 1941,
       "cy": 441
     },
@@ -290,7 +290,7 @@
       "nom": "33",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-14",
       "cx": 2048,
       "cy": 534
     },
@@ -308,7 +308,7 @@
       "nom": "35",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-14",
       "cx": 1921,
       "cy": 718
     },
@@ -326,7 +326,7 @@
       "nom": "37",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-12",
       "cx": 1674,
       "cy": 807
     },
@@ -362,7 +362,7 @@
       "nom": "42",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-10",
       "cx": 1049,
       "cy": 1316
     },
@@ -371,7 +371,7 @@
       "nom": "43",
       "type": "emplacement_nu",
       "borne_eau": null,
-      "borne_elec": null,
+      "borne_elec": "ELEC-10",
       "cx": 966,
       "cy": 1339
     },
@@ -397,8 +397,8 @@
       "id": "46",
       "nom": "46",
       "type": "emplacement_nu",
-      "borne_eau": "EAU-08",
-      "borne_elec": null,
+      "borne_eau": null,
+      "borne_elec": "ELEC-08",
       "cx": 577,
       "cy": 1287
     },
@@ -406,8 +406,8 @@
       "id": "47",
       "nom": "47",
       "type": "emplacement_nu",
-      "borne_eau": "EAU-08",
-      "borne_elec": null,
+      "borne_eau": null,
+      "borne_elec": "ELEC-08",
       "cx": 550,
       "cy": 1122
     },
@@ -563,8 +563,6 @@
       "x": 341,
       "y": 1084,
       "parcelles": [
-        "46",
-        "47",
         "49"
       ]
     },
@@ -626,7 +624,8 @@
       "parcelles": [
         "44",
         "45",
-        "48"
+        "48",
+        "47B"
       ]
     },
     {
@@ -648,7 +647,9 @@
       "x": 1763,
       "y": 847,
       "parcelles": [
+        "23",
         "36",
+        "37",
         "38"
       ]
     },
@@ -659,6 +660,9 @@
       "x": 772,
       "y": 941,
       "parcelles": [
+        "11",
+        "12",
+        "17",
         "49"
       ],
       "note": "juste des resident, borne avec conteur de consomation"
@@ -684,7 +688,9 @@
       "y": 466,
       "parcelles": [
         "32",
-        "34"
+        "33",
+        "34",
+        "35"
       ]
     },
     {
@@ -694,6 +700,9 @@
       "x": 1953,
       "y": 519,
       "parcelles": [
+        "28",
+        "29",
+        "30",
         "31"
       ]
     },
@@ -785,7 +794,10 @@
       "role": "borne",
       "x": 435,
       "y": 1087,
-      "parcelles": []
+      "parcelles": [
+        "46",
+        "47"
+      ]
     },
     {
       "id": "ELEC-04",
@@ -793,7 +805,10 @@
       "role": "borne",
       "x": 1300,
       "y": 600,
-      "parcelles": [],
+      "parcelles": [
+        "24",
+        "26"
+      ],
       "distribue_vers": [
         "ELEC-15"
       ]
@@ -817,7 +832,11 @@
       "role": "borne",
       "x": 1072,
       "y": 1229,
-      "parcelles": []
+      "parcelles": [
+        "18",
+        "42",
+        "43"
+      ]
     },
     {
       "id": "ELEC-05",
