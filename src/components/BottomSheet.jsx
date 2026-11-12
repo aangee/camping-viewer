@@ -1,5 +1,4 @@
-import { BORNE_TYPES } from '@aangee/cottet-schema'
-import { BORNE_COLORS, ROLE_STYLES } from '@aangee/cottet-plan-lib/constants'
+import { BORNE_TYPES, BORNE_COLORS, ROLE_STYLES } from '../contrat/vocabulaire.js'
 
 const LABELS = {
   mh_2ch_3p:    'MH 2CH/3P',

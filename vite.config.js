@@ -7,15 +7,14 @@ export default defineConfig({
   resolve: {
     // ⚠ Une seule copie de React, quoi qu'il arrive.
     //
-    // `@aangee/cottet-plan-lib` est lié en local (file:) pendant le chantier réseau :
-    // ses dépendances se résolvent donc depuis `packages/`, et npm y a installé les
-    // peers React de `react-zoom-pan-pinch`. Sans cette ligne, ce composant charge un
-    // React et l'application un autre — les hooks lèvent « Invalid hook call », et la
-    // page ne s'affiche plus du tout.
+    // Cette ligne vient du temps où `@aangee/cottet-plan-lib` apportait ses propres
+    // peers React : le composant partagé en chargeait un, l'application un autre, et
+    // les hooks levaient « Invalid hook call » — page blanche, diagnostic coûteux.
     //
-    // À conserver même après le retour aux versions publiées : le jour où un package
-    // partagé réintroduit une dépendance à React, le symptôme reviendrait à l'identique
-    // et coûterait le même temps à diagnostiquer.
+    // Le viewer ne dépend plus d'aucun paquet partagé depuis le 2026-11-12 : le rendu
+    // SVG vit dans src/plan/ et le vocabulaire arrive par src/contrat/. La ligne est
+    // CONSERVÉE quand même — le jour où une dépendance réintroduit React, le symptôme
+    // reviendrait à l'identique et coûterait le même temps.
     dedupe: ['react', 'react-dom'],
   },
   plugins: [

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { SCHEMA_VERSIONS, safeValidateViewerData } from '@aangee/cottet-schema'
-import { PlanSVG } from '@aangee/cottet-plan-lib/assembly'
-import { useHighlight } from '@aangee/cottet-plan-lib/content'
+import { SCHEMA_VERSION_VIEWER } from './schemaVersion.js'
+import { PlanSVG } from './plan/PlanSVG.jsx'
+import { useHighlight } from './plan/PlanSVGContent.jsx'
 import { BottomSheet } from './components/BottomSheet'
 import { InstallPrompt } from './components/InstallPrompt'
 import { DataFreshnessWarning } from './components/DataFreshnessWarning'
@@ -20,18 +20,8 @@ export default function App() {
     fetch(`${import.meta.env.BASE_URL}data.json`)
       .then((r) => r.json())
       .then((payload) => {
-        const parsed = safeValidateViewerData(payload)
-        if (!parsed.success) {
-          const msg = `Donnees incompatibles (schema). Rafraichir pour la derniere version.`
-          if (STRICT) {
-            console.error('[schema] strict mode rejected data.json:', parsed.error.issues)
-            setDataError(true)
-            return
-          }
-          console.warn('[schema] warn-only: data.json failed validation, displaying anyway', parsed.error.issues)
-          setSchemaWarning(msg)
-        } else if (payload._meta?.schema_version !== SCHEMA_VERSIONS.viewer) {
-          const msg = `Version du plan obsolete (recu ${payload._meta?.schema_version}, attendu ${SCHEMA_VERSIONS.viewer}). Rafraichir.`
+        if (payload._meta?.schema_version !== SCHEMA_VERSION_VIEWER) {
+          const msg = `Version du plan obsolete (recu ${payload._meta?.schema_version}, attendu ${SCHEMA_VERSION_VIEWER}). Rafraichir.`
           if (STRICT) {
             setDataError(true)
             return
