@@ -1,16 +1,20 @@
 # CLAUDE.md — Viewer Camping Cottet
 
-**Chemin :** `L:/CORE/labs/Camping_Cottet_2026/Apps/app-viewer/`
+**Chemin :** `L:/CORE/labs/camping-cottet-2026/apps/app-viewer/`
 **Stack :** Vite 8 + React 19 + PWA + Playwright
 **NSM project_id :** `p-mp9r25nqaks`
 
 ## Rôle
 
-PWA mobile-first publique, **lecture seule**, pour consulter le plan du camping sur le terrain : hébergements, bornes eau/élec, liaisons. Zoom/pan SVG, panneau bas avec détails. Offline-capable.
+PWA mobile-first, **lecture seule**, pour consulter le plan du camping sur le terrain : hébergements, bornes eau/élec, liaisons. Zoom/pan SVG, panneau bas avec détails. Offline-capable.
+
+⚠ **Pour aangee et le personnel — 4 à 5 personnes identifiées, pas pour les vacanciers**
+(décision d'aangee, 2026-11-12). L'hébergement sur GitHub Pages la rend atteignable par qui
+a l'URL, mais aucun public n'est visé. *Cette ligne disait « publique ».*
 
 ## Position dans la suite
 
-Consommateur du studio admin (cf. `Apps/CLAUDE.md`). Reçoit ses données via `public/data.json`, généré par le module `viewer` du studio puis poussé ici via `npm run sync:viewer` (script `app-admin/tools/sync_viewer_data.mjs`).
+Consommateur du studio admin (cf. `apps/CLAUDE.md`). Reçoit ses données via `public/data.json`, généré par le module `viewer` du studio puis poussé ici via `npm run sync:viewer` (script `app-admin/tools/sync_viewer_data.mjs`).
 
 **Ne jamais éditer `public/data.json` à la main.**
 
@@ -71,6 +75,9 @@ dev / build / preview / lint / generate-pwa-assets
 
 ## Pièges connus
 
-- `BASE_URL = '/camping-cottet-viewer/'` → tout chemin public doit utiliser `import.meta.env.BASE_URL`
+- `BASE_URL = '/camping-viewer/'` → tout chemin public doit utiliser `import.meta.env.BASE_URL`
+  *(ce piège annonçait `/camping-cottet-viewer/`, qui n'existe nulle part : `vite.config.js`
+  et la section « Build & deploy » ci-dessus disent `/camping-viewer/` depuis le renommage
+  du dépôt, le 2026-05-20. Corrigé le 2026-11-12.)*
 - `react-zoom-pan-pinch` v4 → la transformation affine est appliquée inline dans PlanSVG (utilisée pour le culling perf)
 - PWA Workbox cache `data.json` → un refresh nécessite une nouvelle visite ou un skipWaiting
